@@ -49,9 +49,11 @@
 						<option value="1" <?php echo ($p->product_status == 1)? 'selected':''; ?>>Ready</option>
 						<option value="0" <?php echo ($p->product_status == 0)? 'selected':''; ?>>Out of Stock</option>
 					</select>
+					<label for ="">Tanggal upload : </label>
+					<input type="date" name="upload" class="input-control" value="<?php echo $p->product_upload ?>" required>
 					<input type="submit" name="submit" value="Submit" class="btn">
 				</form>
-				<?php 
+				<?php
 					if(isset($_POST['submit'])){
 						$kategori 	= $_POST['kategori'];
 						$nama 		= $_POST['nama'];
@@ -59,6 +61,7 @@
 						$deskripsi 	= $_POST['deskripsi'];
 						$status 	= $_POST['status'];
 						$foto 	 	= $_POST['foto'];
+						$upload     = $_POST['upload'];
 
 						$filename = $_FILES['gambar']['name'];
 						$tmp_name = $_FILES['gambar']['tmp_name'];
@@ -91,6 +94,7 @@
 												product_price = '".$harga."',
 												product_description = '".$deskripsi."',
 												product_image = '".$namagambar."',
+												product_upload = '".$upload."'
 												product_status = '".$status."'
 												WHERE product_id = '".$p->product_id."'	");
 						if($update){

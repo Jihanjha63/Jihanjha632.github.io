@@ -38,11 +38,14 @@
 					<input type="text" name="harga" class="input-control" placeholder="Price" required>
 					<input type="file" name="gambar" class="input-control" required>
 					<input type="textarea" name="deskripsi" class="input-control" placeholder="Description"></textarea><br>
+					<label for ="">Tanggal upload : </label>
+					<input type="date" name="upload" class="input-control" required>
 					<select class="input-control" name="status">
 						<option value="">--Select--</option>
 						<option value="1">Ready</option>
 						<option value="0">Out of Stock</option>
 					</select>
+
 					<input type="submit" name="submit" value="Submit" class="btn">
 				</form>
 				<?php 
@@ -52,6 +55,7 @@
 						$harga 		= $_POST['harga'];
 						$deskripsi 	= $_POST['deskripsi'];
 						$status 	= $_POST['status'];
+						$upload     = $_POST['upload'];
 
 						$filename = $_FILES['gambar']['name'];
 						$tmp_name = $_FILES['gambar']['tmp_name'];
@@ -76,6 +80,7 @@
 										'".$deskripsi."',
 										'".$newname."',
 										'".$status."',
+										'".$upload."',
 										null
 											) ");
 
