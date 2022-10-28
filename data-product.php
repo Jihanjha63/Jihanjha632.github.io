@@ -30,7 +30,6 @@
 							<th>Price</th>
 							<th>Image</th>
 							<th>Status</th>
-							<th width="150px">Upload Date</th>
 							<th width="150px">Action</th>
 						</tr>
 					</thead>
